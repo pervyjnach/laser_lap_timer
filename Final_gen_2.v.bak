@@ -38,9 +38,7 @@ d_trig start_trigger (.clk(laser_detector),
 					  .in(vcc),
 					  .out(enable));
 					  
-d_trig lap_trigger (.clk(laser_detector),
-					.in(vcc), .out(lap_rs),
-					.rs(five_seconds_rs));
+
 					
 timer lap_timer(.en(enable),
 				.clock(master_clk),
@@ -50,7 +48,7 @@ timer lap_timer(.en(enable),
 				.seconds(seconds),
 				.minutes(minutes));
 				
-LED time_led   (.digit_1(lap_rs),
+LED time_led   (.digit_1(minutes),
 				.digit_2(seconds),
 				.digit_3(milliseconds),
 				.led_clk_in(master_clk),
@@ -91,10 +89,17 @@ module timer
 wire w_millseconds;
 wire w_seconds;
 wire w_minutes;
+wire w_reset;
 wire clk;
 
 assign clk = clock & en;
 
+
+five_sec_trig fst (.clk(master_clk),
+				   .rs(w_reset),
+				   .laser(laser_detector),
+				   .reset(w_reset),
+				   .seconds(seconds),)
 
 time_counter #(.VALUE_SIZE(CLK_CNT_SIZE),
 			   .VALUE_BIT(CLK_CNT_BIT))
@@ -118,32 +123,11 @@ time_counter minutes_counter (.clk(w_minutes),
 							  .rs(rs),
 							  .value(minutes));		
 							  
-five_seconds five_sec (.sec(seconds),
-					   .clk(clk),
-					   .five_seconds(five_seconds)
-					   )	;						  					  
+					  					  
 
 endmodule 
 
 
-
-module five_seconds(
- input [6:0] sec,
- input clk,
- output five_seconds
- );
- 
- always@ (posedge clk)
- 
-	begin
-	
-		if (sec == 4 || sec == 0)
-			five_seconds = 1;
-		else
-			five_seconds = 0;
-	
-	end 
-endmodule 
  
    
 module time_counter
@@ -188,6 +172,39 @@ endmodule
 
 
 //===============COMMON MODULES==========================
+
+module five_sec_trig (
+input clk,
+input rs,
+input laser,
+input [6:0] minutes,
+input [6:0] seconds,
+input [6:0] milliseconds,
+output reg reset
+);
+
+
+always@ (posedge clk)
+begin
+	if (rs)
+		reset <= 0;
+	else
+		reset <= reset;
+end
+
+always@ (negedge laser)
+begin
+	if (seconds > 5)
+		reset <= 1;
+	else
+		reset <= 0;
+	
+end	
+	
+endmodule
+
+
+
 
 module fl_fl 
    (
