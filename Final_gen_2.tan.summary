@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.070 ns
+From           : LED:time_led|segm_out:segm_out_1|cathode[4]
+To             : cathode[4]
+From Clock     : master_clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'master_clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 96.43 MHz ( period = 10.370 ns )
+From           : LED:time_led|bidec_to_7:bd7_2_1|segments[4]
+To             : LED:time_led|segm_out:segm_out_1|segm_out[4]
+From Clock     : master_clk
+To Clock       : master_clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'laser_detector'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 183.15 MHz ( period = 5.460 ns )
+From           : timer:lap_timer|time_counter:clk_counter|value[23]
+To             : timer:lap_timer|time_counter:clk_counter|value[16]
+From Clock     : laser_detector
+To Clock       : laser_detector
+Failed Paths   : 0
+
+Type           : Clock Hold: 'master_clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : LED:time_led|counter_6:counter|count[2]
+To             : LED:time_led|segm_out:segm_out_1|segm_out[1]
+From Clock     : master_clk
+To Clock       : master_clk
+Failed Paths   : 135
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 135
+
+--------------------------------------------------------------------------------------
+
