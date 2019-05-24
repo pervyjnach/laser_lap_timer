@@ -27,9 +27,7 @@ wire [6:0] minutes;
 
 
 assign vcc = 1;
-assign one = 1;
-assign two = 2;
-assign tre = 3;
+wire w_reset;
 
 // input clk, in, rs, output out
 
@@ -42,11 +40,20 @@ d_trig start_trigger (.clk(laser_detector),
 					
 timer lap_timer(.en(enable),
 				.clock(master_clk),
-				.rs(lap_rs),
+				.rs(w_reset),
 				.five_seconds(five_seconds_rs),
 				.milliseconds(milliseconds),
 				.seconds(seconds),
 				.minutes(minutes));
+				
+
+five_sec_trig fst (.clk(master_clk),
+				   .rs(w_reset),
+				   .laser(laser_detector),
+				   .reset(w_reset),
+				   .seconds(seconds),
+				   .minutes(minutes));
+				
 				
 LED time_led   (.digit_1(minutes),
 				.digit_2(seconds),
@@ -89,17 +96,11 @@ module timer
 wire w_millseconds;
 wire w_seconds;
 wire w_minutes;
-wire w_reset;
+
 wire clk;
 
 assign clk = clock & en;
 
-
-five_sec_trig fst (.clk(master_clk),
-				   .rs(w_reset),
-				   .laser(laser_detector),
-				   .reset(w_reset),
-				   .seconds(seconds),)
 
 time_counter #(.VALUE_SIZE(CLK_CNT_SIZE),
 			   .VALUE_BIT(CLK_CNT_BIT))
@@ -185,21 +186,15 @@ output reg reset
 
 
 always@ (posedge clk)
-begin
-	if (rs)
-		reset <= 0;
-	else
-		reset <= reset;
-end
+	begin
+		if ((laser == 0 && seconds > 4 && minutes == 0 && rs == 0)
+		  | (laser == 0 && minutes != 0 && rs == 0))	
+			reset <= 1;
+		else if (rs)
+			reset <= 0;
+			
+	end
 
-always@ (negedge laser)
-begin
-	if (seconds > 5)
-		reset <= 1;
-	else
-		reset <= 0;
-	
-end	
 	
 endmodule
 

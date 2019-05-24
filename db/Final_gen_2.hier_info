@@ -1,6 +1,6 @@
 |Final_gen_2
-master_clk => master_clk.IN2
-laser_detector => laser_detector.IN1
+master_clk => master_clk.IN3
+laser_detector => laser_detector.IN2
 segments[0] <= LED:time_led.led_segments
 segments[1] <= LED:time_led.led_segments
 segments[2] <= LED:time_led.led_segments
@@ -216,6 +216,37 @@ value[4] <= value[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 value[5] <= value[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 value[6] <= value[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_clk <= out_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Final_gen_2|five_sec_trig:fst
+clk => reset~reg0.CLK
+rs => reset.OUTPUTSELECT
+rs => always0.IN1
+rs => always0.IN1
+laser => always0.IN1
+laser => always0.IN1
+minutes[0] => Equal0.IN31
+minutes[1] => Equal0.IN30
+minutes[2] => Equal0.IN29
+minutes[3] => Equal0.IN28
+minutes[4] => Equal0.IN27
+minutes[5] => Equal0.IN26
+minutes[6] => Equal0.IN25
+seconds[0] => LessThan0.IN14
+seconds[1] => LessThan0.IN13
+seconds[2] => LessThan0.IN12
+seconds[3] => LessThan0.IN11
+seconds[4] => LessThan0.IN10
+seconds[5] => LessThan0.IN9
+seconds[6] => LessThan0.IN8
+milliseconds[0] => ~NO_FANOUT~
+milliseconds[1] => ~NO_FANOUT~
+milliseconds[2] => ~NO_FANOUT~
+milliseconds[3] => ~NO_FANOUT~
+milliseconds[4] => ~NO_FANOUT~
+milliseconds[5] => ~NO_FANOUT~
+milliseconds[6] => ~NO_FANOUT~
+reset <= reset~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Final_gen_2|LED:time_led

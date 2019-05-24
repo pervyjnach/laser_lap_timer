@@ -31,7 +31,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-f8e3c1e7a50e9427032db19f255237
+bf3a6fb765d21441f0fe66369ff8b62
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -67,7 +67,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-f8e3c1e7a50e9427032db19f255237
+bf3a6fb765d21441f0fe66369ff8b62
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -103,7 +103,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-f8e3c1e7a50e9427032db19f255237
+bf3a6fb765d21441f0fe66369ff8b62
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -137,6 +137,416 @@ DEF
 }
 # hierarchies {
 timer:lap_timer
+}
+# macro_sequence
+
+# end
+# entity
+time_counter
+# storage
+db|Final_gen_2.(3).cnf
+db|Final_gen_2.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+VALUE_SIZE
+490000
+PARAMETER_SIGNED_DEC
+USR
+VALUE_BIT
+25
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+timer:lap_timer|time_counter:clk_counter
+}
+# macro_sequence
+
+# end
+# entity
+time_counter
+# storage
+db|Final_gen_2.(4).cnf
+db|Final_gen_2.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+VALUE_SIZE
+99
+PARAMETER_SIGNED_DEC
+USR
+VALUE_BIT
+6
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+timer:lap_timer|time_counter:milliseconds_counter
+}
+# macro_sequence
+
+# end
+# entity
+time_counter
+# storage
+db|Final_gen_2.(5).cnf
+db|Final_gen_2.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+VALUE_SIZE
+59
+PARAMETER_SIGNED_DEC
+DEF
+VALUE_BIT
+6
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+timer:lap_timer|time_counter:seconds_counter
+timer:lap_timer|time_counter:minutes_counter
+}
+# macro_sequence
+
+# end
+# entity
+five_sec_trig
+# storage
+db|Final_gen_2.(6).cnf
+db|Final_gen_2.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+five_sec_trig:fst
+}
+# macro_sequence
+
+# end
+# entity
+LED
+# storage
+db|Final_gen_2.(7).cnf
+db|Final_gen_2.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+DEL_LED
+5
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+LED:time_led
+}
+# macro_sequence
+
+# end
+# entity
+delitel
+# storage
+db|Final_gen_2.(8).cnf
+db|Final_gen_2.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+DEL
+5
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+LED:time_led|delitel:delitel_led
+}
+# macro_sequence
+
+# end
+# entity
+bidec
+# storage
+db|Final_gen_2.(9).cnf
+db|Final_gen_2.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+LED:time_led|bidec:my_bidec_1
+LED:time_led|bidec:my_bidec_2
+LED:time_led|bidec:my_bidec_3
+}
+# macro_sequence
+
+# end
+# entity
+bidec_to_7
+# storage
+db|Final_gen_2.(10).cnf
+db|Final_gen_2.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+LED:time_led|bidec_to_7:bd7_1_1
+LED:time_led|bidec_to_7:bd7_1_2
+LED:time_led|bidec_to_7:bd7_2_1
+LED:time_led|bidec_to_7:bd7_2_2
+LED:time_led|bidec_to_7:bd7_3_1
+LED:time_led|bidec_to_7:bd7_3_2
+}
+# macro_sequence
+
+# end
+# entity
+counter_6
+# storage
+db|Final_gen_2.(11).cnf
+db|Final_gen_2.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+LED:time_led|counter_6:counter
+}
+# macro_sequence
+
+# end
+# entity
+segm_out
+# storage
+db|Final_gen_2.(12).cnf
+db|Final_gen_2.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+bf3a6fb765d21441f0fe66369ff8b62
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+LED:time_led|segm_out:segm_out_1
 }
 # macro_sequence
 

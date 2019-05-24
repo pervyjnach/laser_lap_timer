@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Final_gen_2
-Fri May 24 00:49:28 2019
+Fri May 24 15:10:24 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -9,9 +9,27 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: timer:lap_timer
+ 12. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:clk_counter
+ 13. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:milliseconds_counter
+ 14. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:seconds_counter
+ 15. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:minutes_counter
+ 16. Parameter Settings for User Entity Instance: LED:time_led
+ 17. Parameter Settings for User Entity Instance: LED:time_led|delitel:delitel_led
+ 18. Port Connectivity Checks: "five_sec_trig:fst"
+ 19. Port Connectivity Checks: "timer:lap_timer|time_counter:minutes_counter"
+ 20. Port Connectivity Checks: "timer:lap_timer|time_counter:clk_counter"
+ 21. Port Connectivity Checks: "timer:lap_timer"
+ 22. Port Connectivity Checks: "d_trig:start_trigger"
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,20 +55,20 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri May 24 00:49:28 2019            ;
+; Analysis & Synthesis Status        ; Successful - Fri May 24 15:10:24 2019        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Final_gen_2                                  ;
 ; Top-level Entity Name              ; Final_gen_2                                  ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; N/A until Partition Merge                    ;
-;     Total combinational functions  ; N/A until Partition Merge                    ;
-;     Dedicated logic registers      ; N/A until Partition Merge                    ;
-; Total registers                    ; N/A until Partition Merge                    ;
-; Total pins                         ; N/A until Partition Merge                    ;
-; Total virtual pins                 ; N/A until Partition Merge                    ;
-; Total memory bits                  ; N/A until Partition Merge                    ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                    ;
-; Total PLLs                         ; N/A until Partition Merge                    ;
+; Total logic elements               ; 334                                          ;
+;     Total combinational functions  ; 333                                          ;
+;     Dedicated logic registers      ; 85                                           ;
+; Total registers                    ; 85                                           ;
+; Total pins                         ; 15                                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
 +------------------------------------+----------------------------------------------+
 
 
@@ -134,15 +152,301 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 2      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                               ;
++----------------------------------+-----------------+------------------------+----------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path           ;
++----------------------------------+-----------------+------------------------+----------------------------------------+
+; Final_gen_2.v                    ; yes             ; User Verilog HDL File  ; E:/slava/laser_lap_timer/Final_gen_2.v ;
++----------------------------------+-----------------+------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 334                     ;
+;                                             ;                         ;
+; Total combinational functions               ; 333                     ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 139                     ;
+;     -- 3 input functions                    ; 124                     ;
+;     -- <=2 input functions                  ; 70                      ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 286                     ;
+;     -- arithmetic mode                      ; 47                      ;
+;                                             ;                         ;
+; Total registers                             ; 85                      ;
+;     -- Dedicated logic registers            ; 85                      ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 15                      ;
+; Maximum fan-out node                        ; five_sec_trig:fst|reset ;
+; Maximum fan-out                             ; 51                      ;
+; Total fan-out                               ; 1314                    ;
+; Average fan-out                             ; 3.03                    ;
++---------------------------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+; |Final_gen_2                              ; 333 (0)           ; 85 (0)       ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |Final_gen_2                                                   ; work         ;
+;    |LED:time_led|                         ; 243 (0)           ; 33 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led                                      ;              ;
+;       |bidec:my_bidec_1|                  ; 31 (31)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec:my_bidec_1                     ;              ;
+;       |bidec:my_bidec_2|                  ; 33 (33)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec:my_bidec_2                     ;              ;
+;       |bidec:my_bidec_3|                  ; 30 (30)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec:my_bidec_3                     ;              ;
+;       |bidec_to_7:bd7_1_1|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_1_1                   ;              ;
+;       |bidec_to_7:bd7_1_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_1_2                   ;              ;
+;       |bidec_to_7:bd7_2_1|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_2_1                   ;              ;
+;       |bidec_to_7:bd7_2_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_2_2                   ;              ;
+;       |bidec_to_7:bd7_3_1|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_3_1                   ;              ;
+;       |bidec_to_7:bd7_3_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_3_2                   ;              ;
+;       |counter_6:counter|                 ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|counter_6:counter                    ;              ;
+;       |delitel:delitel_led|               ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|delitel:delitel_led                  ;              ;
+;       |segm_out:segm_out_1|               ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|segm_out:segm_out_1                  ;              ;
+;    |d_trig:start_trigger|                 ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|d_trig:start_trigger                              ;              ;
+;    |five_sec_trig:fst|                    ; 4 (4)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|five_sec_trig:fst                                 ;              ;
+;    |timer:lap_timer|                      ; 86 (1)            ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|timer:lap_timer                                   ;              ;
+;       |time_counter:clk_counter|          ; 45 (45)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|timer:lap_timer|time_counter:clk_counter          ;              ;
+;       |time_counter:milliseconds_counter| ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|timer:lap_timer|time_counter:milliseconds_counter ;              ;
+;       |time_counter:minutes_counter|      ; 13 (13)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|timer:lap_timer|time_counter:minutes_counter      ;              ;
+;       |time_counter:seconds_counter|      ; 14 (14)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|timer:lap_timer|time_counter:seconds_counter      ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                   ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                    ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+; LED:time_led|segm_out:segm_out_1|segm_out[0]        ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|segm_out[1]        ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|segm_out[2]        ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|segm_out[3]        ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|segm_out[4]        ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|segm_out[5]        ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|segm_out[6]        ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|cathode[0]         ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|cathode[1]         ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|cathode[2]         ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|cathode[3]         ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|cathode[4]         ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|segm_out:segm_out_1|cathode[5]         ; LED:time_led|segm_out:segm_out_1|Mux14 ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_2|segments[0]         ; LED:time_led|bidec_to_7:bd7_3_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_1|segments[0]         ; LED:time_led|bidec_to_7:bd7_2_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_2|segments[0]         ; LED:time_led|bidec_to_7:bd7_1_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_2|segments[0]         ; LED:time_led|bidec_to_7:bd7_2_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_1|segments[0]         ; LED:time_led|bidec_to_7:bd7_1_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_1|segments[0]         ; LED:time_led|bidec_to_7:bd7_3_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_1|segments[1]         ; LED:time_led|bidec_to_7:bd7_2_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_2|segments[1]         ; LED:time_led|bidec_to_7:bd7_3_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_2|segments[1]         ; LED:time_led|bidec_to_7:bd7_1_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_2|segments[1]         ; LED:time_led|bidec_to_7:bd7_2_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_1|segments[1]         ; LED:time_led|bidec_to_7:bd7_1_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_1|segments[1]         ; LED:time_led|bidec_to_7:bd7_3_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_2|segments[2]         ; LED:time_led|bidec_to_7:bd7_3_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_1|segments[2]         ; LED:time_led|bidec_to_7:bd7_2_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_2|segments[2]         ; LED:time_led|bidec_to_7:bd7_1_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_2|segments[2]         ; LED:time_led|bidec_to_7:bd7_2_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_1|segments[2]         ; LED:time_led|bidec_to_7:bd7_1_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_1|segments[2]         ; LED:time_led|bidec_to_7:bd7_3_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_1|segments[3]         ; LED:time_led|bidec_to_7:bd7_2_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_2|segments[3]         ; LED:time_led|bidec_to_7:bd7_3_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_2|segments[3]         ; LED:time_led|bidec_to_7:bd7_1_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_2|segments[3]         ; LED:time_led|bidec_to_7:bd7_2_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_1|segments[3]         ; LED:time_led|bidec_to_7:bd7_1_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_1|segments[3]         ; LED:time_led|bidec_to_7:bd7_3_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_2|segments[4]         ; LED:time_led|bidec_to_7:bd7_3_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_1|segments[4]         ; LED:time_led|bidec_to_7:bd7_2_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_2|segments[4]         ; LED:time_led|bidec_to_7:bd7_1_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_2|segments[4]         ; LED:time_led|bidec_to_7:bd7_2_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_1|segments[4]         ; LED:time_led|bidec_to_7:bd7_1_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_1|segments[4]         ; LED:time_led|bidec_to_7:bd7_3_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_1|segments[5]         ; LED:time_led|bidec_to_7:bd7_2_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_2|segments[5]         ; LED:time_led|bidec_to_7:bd7_3_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_2|segments[5]         ; LED:time_led|bidec_to_7:bd7_1_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_2|segments[5]         ; LED:time_led|bidec_to_7:bd7_2_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_1|segments[5]         ; LED:time_led|bidec_to_7:bd7_1_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_1|segments[5]         ; LED:time_led|bidec_to_7:bd7_3_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_2|segments[6]         ; LED:time_led|bidec_to_7:bd7_3_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_1|segments[6]         ; LED:time_led|bidec_to_7:bd7_2_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_2|segments[6]         ; LED:time_led|bidec_to_7:bd7_1_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_2_2|segments[6]         ; LED:time_led|bidec_to_7:bd7_2_2|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_1_1|segments[6]         ; LED:time_led|bidec_to_7:bd7_1_1|Mux7   ; yes                    ;
+; LED:time_led|bidec_to_7:bd7_3_1|segments[6]         ; LED:time_led|bidec_to_7:bd7_3_1|Mux7   ; yes                    ;
+; Number of user-specified and inferred latches = 55  ;                                        ;                        ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------+
+; Registers Removed During Synthesis                               ;
++---------------------------------------------+--------------------+
+; Register name                               ; Reason for Removal ;
++---------------------------------------------+--------------------+
+; LED:time_led|delitel:delitel_led|d_c[6..24] ; Lost fanout        ;
+; Total Number of Removed Registers = 19      ;                    ;
++---------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 85    ;
+; Number of registers using Synchronous Clear  ; 5     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 47    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 18    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |Final_gen_2|LED:time_led|bidec:my_bidec_1|vyhod_1[1][3] ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |Final_gen_2|LED:time_led|bidec:my_bidec_2|vyhod_1[1][3] ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |Final_gen_2|LED:time_led|bidec:my_bidec_3|vyhod_1[1][3] ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 44 LEs               ; 40 LEs                 ; Yes        ; |Final_gen_2|LED:time_led|bidec:my_bidec_1|vyhod_1[0][1] ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 44 LEs               ; 40 LEs                 ; Yes        ; |Final_gen_2|LED:time_led|bidec:my_bidec_2|vyhod_1[1][0] ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 44 LEs               ; 40 LEs                 ; Yes        ; |Final_gen_2|LED:time_led|bidec:my_bidec_3|vyhod_1[0][1] ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |Final_gen_2|LED:time_led|segm_out:segm_out_1|Mux7       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:lap_timer ;
++----------------+--------+------------------------------------+
+; Parameter Name ; Value  ; Type                               ;
++----------------+--------+------------------------------------+
+; CLK_CNT_SIZE   ; 490000 ; Signed Integer                     ;
+; CLK_CNT_BIT    ; 25     ; Signed Integer                     ;
+; CLK_MIL        ; 99     ; Signed Integer                     ;
++----------------+--------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:clk_counter ;
++----------------+--------+-------------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                        ;
++----------------+--------+-------------------------------------------------------------+
+; VALUE_SIZE     ; 490000 ; Signed Integer                                              ;
+; VALUE_BIT      ; 25     ; Signed Integer                                              ;
++----------------+--------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:milliseconds_counter ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; VALUE_SIZE     ; 99    ; Signed Integer                                                        ;
+; VALUE_BIT      ; 6     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:seconds_counter ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; VALUE_SIZE     ; 59    ; Signed Integer                                                   ;
+; VALUE_BIT      ; 6     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:minutes_counter ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; VALUE_SIZE     ; 59    ; Signed Integer                                                   ;
+; VALUE_BIT      ; 6     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LED:time_led ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; DEL_LED        ; 5     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LED:time_led|delitel:delitel_led ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; DEL            ; 5     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "five_sec_trig:fst"                                                                                                                                  ;
++--------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                      ;
++--------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; milliseconds ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++--------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "timer:lap_timer|time_counter:minutes_counter"                                                               ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; out_clk ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "timer:lap_timer|time_counter:clk_counter"                                                                 ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; value ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "timer:lap_timer"                                                                                                                                     ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                      ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; five_seconds ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; key_1        ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; key_2        ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "d_trig:start_trigger"                                                                                                                       ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
+; rs   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -151,16 +455,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri May 24 00:49:27 2019
+    Info: Processing started: Fri May 24 15:10:18 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Final_gen_2 -c Final_gen_2
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(413): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(414): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(415): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(416): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(422): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(423): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(424): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(425): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(408): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(409): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(410): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(411): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(417): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(418): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(419): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(420): truncated literal to match 3 bits
 Info: Found 15 design units, including 15 entities, in source file final_gen_2.v
     Info: Found entity 1: Final_gen_2
     Info: Found entity 2: timer
@@ -179,32 +483,208 @@ Info: Found 15 design units, including 15 entities, in source file final_gen_2.v
     Info: Found entity 15: bidec_to_7
 Info: Found 1 design units, including 1 entities, in source file lpm_dff0.v
     Info: Found entity 1: lpm_dff0
-Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(98): created implicit net for "master_clk"
-Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(100): created implicit net for "laser_detector"
-Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(109): created implicit net for "w_milliseconds"
-Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(363): created implicit net for "led_clk"
+Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(110): created implicit net for "w_milliseconds"
+Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(358): created implicit net for "led_clk"
 Info: Elaborating entity "Final_gen_2" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Final_gen_2.v(16): object "one" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Final_gen_2.v(17): object "two" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Final_gen_2.v(18): object "tre" assigned a value but never read
 Info: Elaborating entity "d_trig" for hierarchy "d_trig:start_trigger"
 Info: Elaborating entity "timer" for hierarchy "timer:lap_timer"
-Warning (10034): Output port "five_seconds" at Final_gen_2.v(83) has no driver
-Info: Elaborating entity "five_sec_trig" for hierarchy "timer:lap_timer|five_sec_trig:fst"
-Error (10028): Can't resolve multiple constant drivers for net "reset" at Final_gen_2.v(195) File: C:/Projects/laser_lap_timer/Final_gen_2.v Line: 195
-Error (10029): Constant driver at Final_gen_2.v(187) File: C:/Projects/laser_lap_timer/Final_gen_2.v Line: 187
-Error: Can't elaborate user hierarchy "timer:lap_timer|five_sec_trig:fst" File: C:/Projects/laser_lap_timer/Final_gen_2.v Line: 102
-Info: Generated suppressed messages file C:/Projects/laser_lap_timer/Final_gen_2.map.smsg
-Error: Quartus II Analysis & Synthesis was unsuccessful. 3 errors, 16 warnings
-    Error: Peak virtual memory: 206 megabytes
-    Error: Processing ended: Fri May 24 00:49:28 2019
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Warning (10034): Output port "five_seconds" at Final_gen_2.v(90) has no driver
+Info: Elaborating entity "time_counter" for hierarchy "timer:lap_timer|time_counter:clk_counter"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(159): truncated value with size 32 to match size of target (26)
+Info: Elaborating entity "time_counter" for hierarchy "timer:lap_timer|time_counter:milliseconds_counter"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(159): truncated value with size 32 to match size of target (7)
+Info: Elaborating entity "time_counter" for hierarchy "timer:lap_timer|time_counter:seconds_counter"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(159): truncated value with size 32 to match size of target (7)
+Info: Elaborating entity "five_sec_trig" for hierarchy "five_sec_trig:fst"
+Info: Elaborating entity "LED" for hierarchy "LED:time_led"
+Info: Elaborating entity "delitel" for hierarchy "LED:time_led|delitel:delitel_led"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(286): truncated value with size 32 to match size of target (25)
+Info: Elaborating entity "bidec" for hierarchy "LED:time_led|bidec:my_bidec_1"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(462): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(467): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(472): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(478): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(484): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(490): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(496): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(502): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(508): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "bidec_to_7" for hierarchy "LED:time_led|bidec_to_7:bd7_1_1"
+Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(522): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(522): inferring latch(es) for variable "segments", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "segments[0]" at Final_gen_2.v(522)
+Info (10041): Inferred latch for "segments[1]" at Final_gen_2.v(522)
+Info (10041): Inferred latch for "segments[2]" at Final_gen_2.v(522)
+Info (10041): Inferred latch for "segments[3]" at Final_gen_2.v(522)
+Info (10041): Inferred latch for "segments[4]" at Final_gen_2.v(522)
+Info (10041): Inferred latch for "segments[5]" at Final_gen_2.v(522)
+Info (10041): Inferred latch for "segments[6]" at Final_gen_2.v(522)
+Info: Elaborating entity "counter_6" for hierarchy "LED:time_led|counter_6:counter"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(438): truncated value with size 32 to match size of target (3)
+Info: Elaborating entity "segm_out" for hierarchy "LED:time_led|segm_out:segm_out_1"
+Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(404): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(414): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(404): inferring latch(es) for variable "segm_out", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(404): inferring latch(es) for variable "cathode", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "cathode[0]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "cathode[1]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "cathode[2]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "cathode[3]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "cathode[4]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "cathode[5]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "segm_out[0]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "segm_out[1]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "segm_out[2]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "segm_out[3]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "segm_out[4]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "segm_out[5]" at Final_gen_2.v(404)
+Info (10041): Inferred latch for "segm_out[6]" at Final_gen_2.v(404)
+Warning: 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|cathode[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|cathode[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|cathode[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[1]
+Warning: Latch LED:time_led|segm_out:segm_out_1|cathode[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[1]
+Warning: Latch LED:time_led|segm_out:segm_out_1|cathode[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|segm_out:segm_out_1|cathode[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_2|segments[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_1|segments[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_2|segments[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_2|segments[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_1|segments[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_1|segments[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_1|segments[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[1][2]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_2|segments[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[0][2]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_2|segments[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[0][2]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_2|segments[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[0][2]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_1|segments[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[1][2]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_1|segments[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[1][2]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_2|segments[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_1|segments[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_2|segments[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_2|segments[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_1|segments[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_1|segments[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_1|segments[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_2|segments[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_2|segments[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_2|segments[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_1|segments[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_1|segments[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_2|segments[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_1|segments[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_2|segments[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_2|segments[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_1|segments[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_1|segments[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_1|segments[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_2|segments[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_2|segments[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_2|segments[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_1|segments[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_1|segments[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_2|segments[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_1|segments[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_2|segments[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_2_2|segments[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_2|vyhod_1[0][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_1_1|segments[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_1|vyhod_1[1][1]
+Warning: Latch LED:time_led|bidec_to_7:bd7_3_1|segments[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|bidec:my_bidec_3|vyhod_1[1][1]
+Info: 19 registers lost all their fanouts during netlist optimizations. The first 19 are displayed below.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "LED:time_led|delitel:delitel_led|d_c[24]" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file E:/slava/laser_lap_timer/Final_gen_2.map.smsg
+Info: Implemented 349 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 13 output pins
+    Info: Implemented 334 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 142 warnings
+    Info: Peak virtual memory: 195 megabytes
+    Info: Processing ended: Fri May 24 15:10:24 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Projects/laser_lap_timer/Final_gen_2.map.smsg.
+The suppressed messages can be found in E:/slava/laser_lap_timer/Final_gen_2.map.smsg.
 
 

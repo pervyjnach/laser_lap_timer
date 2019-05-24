@@ -2,22 +2,42 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.060 ns
+From           : laser_detector
+To             : five_sec_trig:fst|reset
+From Clock     : --
+To Clock       : master_clk
+Failed Paths   : 0
+
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 18.870 ns
-From           : LED:time_led|segm_out:segm_out_1|cathode[2]
-To             : cathode[2]
+Actual Time    : 18.174 ns
+From           : LED:time_led|segm_out:segm_out_1|segm_out[3]
+To             : segments[3]
 From Clock     : master_clk
 To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -5.794 ns
+From           : laser_detector
+To             : five_sec_trig:fst|reset
+From Clock     : --
+To Clock       : master_clk
 Failed Paths   : 0
 
 Type           : Clock Setup: 'master_clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 78.46 MHz ( period = 12.745 ns )
-From           : timer:lap_timer|time_counter:minutes_counter|value[4]
-To             : LED:time_led|bidec:my_bidec_1|vyhod_1[0][2]
+Actual Time    : 82.86 MHz ( period = 12.069 ns )
+From           : timer:lap_timer|time_counter:minutes_counter|value[3]
+To             : five_sec_trig:fst|reset
 From Clock     : master_clk
 To Clock       : master_clk
 Failed Paths   : 0
@@ -25,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'laser_detector'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 196.97 MHz ( period = 5.077 ns )
-From           : timer:lap_timer|time_counter:clk_counter|value[24]
-To             : timer:lap_timer|time_counter:clk_counter|value[16]
+Actual Time    : 189.14 MHz ( period = 5.287 ns )
+From           : timer:lap_timer|time_counter:clk_counter|value[18]
+To             : timer:lap_timer|time_counter:clk_counter|value[11]
 From Clock     : laser_detector
 To Clock       : laser_detector
 Failed Paths   : 0
@@ -36,11 +56,11 @@ Type           : Clock Hold: 'master_clk'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : LED:time_led|counter_6:counter|count[1]
-To             : LED:time_led|segm_out:segm_out_1|segm_out[6]
+From           : five_sec_trig:fst|reset
+To             : timer:lap_timer|time_counter:seconds_counter|out_clk
 From Clock     : master_clk
 To Clock       : master_clk
-Failed Paths   : 186
+Failed Paths   : 187
 
 Type           : Total number of failed paths
 Slack          : 
@@ -50,7 +70,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 186
+Failed Paths   : 187
 
 --------------------------------------------------------------------------------------
 
