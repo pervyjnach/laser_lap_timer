@@ -239,13 +239,6 @@ seconds[3] => LessThan0.IN11
 seconds[4] => LessThan0.IN10
 seconds[5] => LessThan0.IN9
 seconds[6] => LessThan0.IN8
-milliseconds[0] => ~NO_FANOUT~
-milliseconds[1] => ~NO_FANOUT~
-milliseconds[2] => ~NO_FANOUT~
-milliseconds[3] => ~NO_FANOUT~
-milliseconds[4] => ~NO_FANOUT~
-milliseconds[5] => ~NO_FANOUT~
-milliseconds[6] => ~NO_FANOUT~
 reset <= reset~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

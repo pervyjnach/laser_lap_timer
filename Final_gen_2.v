@@ -77,7 +77,7 @@ endmodule
 
 
 module timer 
-#(parameter CLK_CNT_SIZE = 490000,
+#(parameter CLK_CNT_SIZE = 500000,
   parameter CLK_CNT_BIT = 25,
   parameter CLK_MIL = 99)
 
@@ -182,6 +182,10 @@ input [6:0] minutes,
 input [6:0] seconds,
 output reg reset
 );
+
+initial begin
+	reset <= 0;
+end
 
 
 always@ (posedge clk)

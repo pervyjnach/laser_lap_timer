@@ -180,9 +180,12 @@ input rs,
 input laser,
 input [6:0] minutes,
 input [6:0] seconds,
-input [6:0] milliseconds,
 output reg reset
 );
+
+initial begin
+	reset <= 0;
+end
 
 
 always@ (posedge clk)
@@ -196,7 +199,7 @@ always@ (posedge clk)
 	end
 
 	
-endmodule
+endmodule 
 
 
 
