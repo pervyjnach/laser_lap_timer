@@ -31,7 +31,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -67,7 +67,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -103,7 +103,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -123,7 +123,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # user_parameter {
 CLK_CNT_SIZE
-490000
+500000
 PARAMETER_SIGNED_DEC
 DEF
 CLK_CNT_BIT
@@ -153,7 +153,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -173,7 +173,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # user_parameter {
 VALUE_SIZE
-490000
+500000
 PARAMETER_SIGNED_DEC
 USR
 VALUE_BIT
@@ -199,7 +199,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -245,7 +245,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -281,7 +281,7 @@ timer:lap_timer|time_counter:minutes_counter
 
 # end
 # entity
-five_seconds
+five_sec_trig
 # storage
 db|Final_gen_2.(6).cnf
 db|Final_gen_2.(6).cnf
@@ -292,7 +292,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -311,7 +311,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-timer:lap_timer|five_seconds:five_sec
+five_sec_trig:fst
 }
 # macro_sequence
 
@@ -328,7 +328,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -370,7 +370,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -412,7 +412,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -450,7 +450,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -491,7 +491,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -527,7 +527,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-2f5990b8ba6b1a63c532794583cd28b4
+1b4e3fba70685d771de39bf92d5d77
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT

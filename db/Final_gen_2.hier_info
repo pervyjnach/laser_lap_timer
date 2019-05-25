@@ -1,6 +1,6 @@
 |Final_gen_2
-master_clk => master_clk.IN2
-laser_detector => laser_detector.IN1
+master_clk => master_clk.IN3
+laser_detector => laser_detector.IN2
 segments[0] <= LED:time_led.led_segments
 segments[1] <= LED:time_led.led_segments
 segments[2] <= LED:time_led.led_segments
@@ -29,7 +29,7 @@ rs => rs.IN4
 clock => clk.IN1
 key_1 => ~NO_FANOUT~
 key_2 => ~NO_FANOUT~
-five_seconds <= five_seconds:five_sec.five_seconds
+five_seconds <= <GND>
 milliseconds[0] <= time_counter:milliseconds_counter.value
 milliseconds[1] <= time_counter:milliseconds_counter.value
 milliseconds[2] <= time_counter:milliseconds_counter.value
@@ -37,13 +37,13 @@ milliseconds[3] <= time_counter:milliseconds_counter.value
 milliseconds[4] <= time_counter:milliseconds_counter.value
 milliseconds[5] <= time_counter:milliseconds_counter.value
 milliseconds[6] <= time_counter:milliseconds_counter.value
-seconds[0] <= seconds[0].DB_MAX_OUTPUT_PORT_TYPE
-seconds[1] <= seconds[1].DB_MAX_OUTPUT_PORT_TYPE
-seconds[2] <= seconds[2].DB_MAX_OUTPUT_PORT_TYPE
-seconds[3] <= seconds[3].DB_MAX_OUTPUT_PORT_TYPE
-seconds[4] <= seconds[4].DB_MAX_OUTPUT_PORT_TYPE
-seconds[5] <= seconds[5].DB_MAX_OUTPUT_PORT_TYPE
-seconds[6] <= seconds[6].DB_MAX_OUTPUT_PORT_TYPE
+seconds[0] <= time_counter:seconds_counter.value
+seconds[1] <= time_counter:seconds_counter.value
+seconds[2] <= time_counter:seconds_counter.value
+seconds[3] <= time_counter:seconds_counter.value
+seconds[4] <= time_counter:seconds_counter.value
+seconds[5] <= time_counter:seconds_counter.value
+seconds[6] <= time_counter:seconds_counter.value
 minutes[0] <= time_counter:minutes_counter.value
 minutes[1] <= time_counter:minutes_counter.value
 minutes[2] <= time_counter:minutes_counter.value
@@ -218,23 +218,28 @@ value[6] <= value[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_clk <= out_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Final_gen_2|timer:lap_timer|five_seconds:five_sec
-sec[0] => Equal0.IN31
-sec[0] => Equal1.IN31
-sec[1] => Equal0.IN30
-sec[1] => Equal1.IN30
-sec[2] => Equal0.IN0
-sec[2] => Equal1.IN29
-sec[3] => Equal0.IN29
-sec[3] => Equal1.IN28
-sec[4] => Equal0.IN28
-sec[4] => Equal1.IN27
-sec[5] => Equal0.IN27
-sec[5] => Equal1.IN26
-sec[6] => Equal0.IN26
-sec[6] => Equal1.IN25
-clk => five_seconds~reg0.CLK
-five_seconds <= five_seconds~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|Final_gen_2|five_sec_trig:fst
+clk => reset~reg0.CLK
+rs => reset.OUTPUTSELECT
+rs => always0.IN1
+rs => always0.IN1
+laser => always0.IN1
+laser => always0.IN1
+minutes[0] => Equal0.IN31
+minutes[1] => Equal0.IN30
+minutes[2] => Equal0.IN29
+minutes[3] => Equal0.IN28
+minutes[4] => Equal0.IN27
+minutes[5] => Equal0.IN26
+minutes[6] => Equal0.IN25
+seconds[0] => LessThan0.IN14
+seconds[1] => LessThan0.IN13
+seconds[2] => LessThan0.IN12
+seconds[3] => LessThan0.IN11
+seconds[4] => LessThan0.IN10
+seconds[5] => LessThan0.IN9
+seconds[6] => LessThan0.IN8
+reset <= reset~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Final_gen_2|LED:time_led
