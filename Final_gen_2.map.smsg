@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at Final_gen_2.v(451): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Final_gen_2.v(525): always construct contains both blocking and non-blocking assignments
