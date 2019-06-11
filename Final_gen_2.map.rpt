@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Final_gen_2
-Mon May 27 17:24:40 2019
+Tue Jun 11 17:38:04 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -16,19 +16,31 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: timer:lap_timer
- 12. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:clk_counter
- 13. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:milliseconds_counter
- 14. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:seconds_counter
- 15. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:minutes_counter
- 16. Parameter Settings for User Entity Instance: LED:time_led
- 17. Parameter Settings for User Entity Instance: LED:time_led|delitel:delitel_led
- 18. Port Connectivity Checks: "timer:lap_timer|time_counter:minutes_counter"
- 19. Port Connectivity Checks: "timer:lap_timer|time_counter:clk_counter"
- 20. Port Connectivity Checks: "timer:lap_timer"
- 21. Port Connectivity Checks: "d_trig:start_trigger"
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+ 11. Parameter Settings for User Entity Instance: lcd_top:l_t|lcd:mylcd|init:initializator
+ 12. Parameter Settings for User Entity Instance: lcd_top:l_t|lcd:mylcd|write:wrt
+ 13. Parameter Settings for User Entity Instance: timer:lap_timer
+ 14. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:clk_counter
+ 15. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:milliseconds_counter
+ 16. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:seconds_counter
+ 17. Parameter Settings for User Entity Instance: timer:lap_timer|time_counter:minutes_counter
+ 18. Parameter Settings for User Entity Instance: LED:time_led
+ 19. Parameter Settings for User Entity Instance: LED:time_led|delitel:delitel_led
+ 20. Port Connectivity Checks: "timer:lap_timer|time_counter:minutes_counter"
+ 21. Port Connectivity Checks: "timer:lap_timer|time_counter:clk_counter"
+ 22. Port Connectivity Checks: "timer:lap_timer"
+ 23. Port Connectivity Checks: "d_trig:start_trigger"
+ 24. Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl6"
+ 25. Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl5"
+ 26. Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl4"
+ 27. Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl3"
+ 28. Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl2"
+ 29. Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl1"
+ 30. Port Connectivity Checks: "lcd_top:l_t|lcd:mylcd|write:wrt"
+ 31. Port Connectivity Checks: "lcd_top:l_t|lcd:mylcd|init:initializator"
+ 32. Port Connectivity Checks: "lcd_top:l_t|lcd:mylcd"
+ 33. Port Connectivity Checks: "lcd_top:l_t"
+ 34. Analysis & Synthesis Messages
+ 35. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,7 +66,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 27 17:24:40 2019        ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 11 17:38:04 2019        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Final_gen_2                                  ;
 ; Top-level Entity Name              ; Final_gen_2                                  ;
@@ -195,23 +207,23 @@ applicable agreement for further details.
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
 ; |Final_gen_2                              ; 363 (0)           ; 127 (0)      ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |Final_gen_2                                                   ; work         ;
-;    |LED:time_led|                         ; 248 (0)           ; 33 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led                                      ;              ;
-;       |bidec:my_bidec_1|                  ; 33 (33)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec:my_bidec_1                     ;              ;
+;    |LED:time_led|                         ; 248 (0)           ; 33 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led                                      ; work         ;
+;       |bidec:my_bidec_1|                  ; 33 (33)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec:my_bidec_1                     ; work         ;
 ;       |bidec:my_bidec_2|                  ; 33 (33)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec:my_bidec_2                     ;              ;
-;       |bidec:my_bidec_3|                  ; 33 (33)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec:my_bidec_3                     ;              ;
+;       |bidec:my_bidec_3|                  ; 33 (33)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec:my_bidec_3                     ; work         ;
 ;       |bidec_to_7:bd7_1_1|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_1_1                   ;              ;
-;       |bidec_to_7:bd7_1_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_1_2                   ;              ;
+;       |bidec_to_7:bd7_1_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_1_2                   ; work         ;
 ;       |bidec_to_7:bd7_2_1|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_2_1                   ;              ;
-;       |bidec_to_7:bd7_2_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_2_2                   ;              ;
+;       |bidec_to_7:bd7_2_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_2_2                   ; work         ;
 ;       |bidec_to_7:bd7_3_1|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_3_1                   ;              ;
-;       |bidec_to_7:bd7_3_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_3_2                   ;              ;
-;       |counter_6:counter|                 ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|counter_6:counter                    ;              ;
+;       |bidec_to_7:bd7_3_2|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_3_2                   ; work         ;
+;       |counter_6:counter|                 ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|counter_6:counter                    ; work         ;
 ;       |delitel:delitel_led|               ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|delitel:delitel_led                  ;              ;
-;       |segm_out:segm_out_1|               ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|segm_out:segm_out_1                  ;              ;
+;       |segm_out:segm_out_1|               ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|LED:time_led|segm_out:segm_out_1                  ; work         ;
 ;    |d_trig:start_trigger|                 ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|d_trig:start_trigger                              ;              ;
 ;    |five_sec_trig:fst|                    ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|five_sec_trig:fst                                 ;              ;
-;    |time_mux:tmx|                         ; 26 (26)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|time_mux:tmx                                      ;              ;
-;    |time_trig:ttr|                        ; 0 (0)             ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|time_trig:ttr                                     ; work         ;
+;    |time_mux:tmx|                         ; 26 (26)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|time_mux:tmx                                      ; work         ;
+;    |time_trig:ttr|                        ; 0 (0)             ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|time_trig:ttr                                     ;              ;
 ;    |timer:lap_timer|                      ; 86 (1)            ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|timer:lap_timer                                   ;              ;
 ;       |time_counter:clk_counter|          ; 45 (45)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|timer:lap_timer|time_counter:clk_counter          ;              ;
 ;       |time_counter:milliseconds_counter| ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final_gen_2|timer:lap_timer|time_counter:milliseconds_counter ;              ;
@@ -324,6 +336,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 64:1               ; 2 bits    ; 84 LEs        ; 44 LEs               ; 40 LEs                 ; Yes        ; |Final_gen_2|LED:time_led|bidec:my_bidec_3|vyhod_1[1][0] ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |Final_gen_2|LED:time_led|segm_out:segm_out_1|Mux7       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_top:l_t|lcd:mylcd|init:initializator ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; N              ; 14    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_top:l_t|lcd:mylcd|write:wrt ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; N              ; 14    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------+
@@ -441,101 +473,353 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl6"                                                                           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; data ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl5"                                                                           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; data ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl4"                                                                           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; data ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl3"                                                                           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; data ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl2"                                                                           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; data ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|bidec_to_lcd:btl1"                                                                           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; data ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|lcd:mylcd|write:wrt" ;
++-------------------+-------+----------+----------------------+
+; Port              ; Type  ; Severity ; Details              ;
++-------------------+-------+----------+----------------------+
+; in_data[0][9..8]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[0][6..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[0][7]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[1][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[1][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[1][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[1][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[2][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[2][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[2][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[2][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[3][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[3][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[3][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[3][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[4][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[4][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[4][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[4][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[5][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[5][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[5][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[5][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[6][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[6][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[6][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[6][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[7][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[7][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[7][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[7][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[8][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[8][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[8][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[8][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[9][8..5]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[9][3..0]  ; Input ; Info     ; Stuck at GND         ;
+; in_data[9][9]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[9][4]     ; Input ; Info     ; Stuck at VCC         ;
+; in_data[10][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[10][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[10][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[10][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[11][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[11][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[11][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[11][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[12][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[12][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[12][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[12][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[13][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[13][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[13][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[13][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[14][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[14][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[14][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[14][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[15][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[15][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[15][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[15][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[16][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[16][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[16][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[16][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[17][7..6] ; Input ; Info     ; Stuck at VCC         ;
+; in_data[17][9..8] ; Input ; Info     ; Stuck at GND         ;
+; in_data[17][5..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[18][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[18][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[18][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[18][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[19][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[19][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[19][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[19][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[20][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[20][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[20][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[20][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[21][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[21][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[21][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[21][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[22][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[22][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[22][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[22][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[23][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[23][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[23][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[23][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[24][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[24][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[24][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[24][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[25][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[25][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[25][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[25][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[26][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[26][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[26][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[26][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[27][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[27][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[27][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[27][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[28][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[28][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[28][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[28][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[29][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[29][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[29][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[29][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[30][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[30][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[30][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[30][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[31][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[31][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[31][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[31][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[32][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[32][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[32][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[32][4]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[33][8..5] ; Input ; Info     ; Stuck at GND         ;
+; in_data[33][3..0] ; Input ; Info     ; Stuck at GND         ;
+; in_data[33][9]    ; Input ; Info     ; Stuck at VCC         ;
+; in_data[33][4]    ; Input ; Info     ; Stuck at VCC         ;
++-------------------+-------+----------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|lcd:mylcd|init:initializator"                                                                         ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                  ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; counter_2_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t|lcd:mylcd"                                                                                             ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                  ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; enable_control ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; ready_out      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_top:l_t"                                                                                               ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; data   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; enable ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon May 27 17:24:34 2019
+    Info: Processing started: Tue Jun 11 17:37:58 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Final_gen_2 -c Final_gen_2
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(482): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(483): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(484): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(485): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(491): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(492): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(493): truncated literal to match 3 bits
-Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(494): truncated literal to match 3 bits
-Info: Found 17 design units, including 17 entities, in source file final_gen_2.v
+Warning (10261): Verilog HDL Event Control warning at Final_gen_2.v(367): Event Control contains a complex event expression
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(777): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(778): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(779): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(780): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(786): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(787): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(788): truncated literal to match 3 bits
+Warning (10229): Verilog HDL Expression warning at Final_gen_2.v(789): truncated literal to match 3 bits
+Info: Found 22 design units, including 22 entities, in source file final_gen_2.v
     Info: Found entity 1: Final_gen_2
-    Info: Found entity 2: timer
-    Info: Found entity 3: time_counter
-    Info: Found entity 4: time_trig
-    Info: Found entity 5: time_mux
-    Info: Found entity 6: five_sec_trig
-    Info: Found entity 7: fl_fl
-    Info: Found entity 8: counter
-    Info: Found entity 9: up_down_counter
-    Info: Found entity 10: keys
-    Info: Found entity 11: delitel
-    Info: Found entity 12: d_trig
-    Info: Found entity 13: LED
-    Info: Found entity 14: segm_out
-    Info: Found entity 15: counter_6
-    Info: Found entity 16: bidec
-    Info: Found entity 17: bidec_to_7
+    Info: Found entity 2: lcd_top
+    Info: Found entity 3: bidec_to_lcd
+    Info: Found entity 4: lcd
+    Info: Found entity 5: write
+    Info: Found entity 6: init
+    Info: Found entity 7: timer
+    Info: Found entity 8: time_counter
+    Info: Found entity 9: time_trig
+    Info: Found entity 10: time_mux
+    Info: Found entity 11: five_sec_trig
+    Info: Found entity 12: fl_fl
+    Info: Found entity 13: counter
+    Info: Found entity 14: up_down_counter
+    Info: Found entity 15: keys
+    Info: Found entity 16: delitel
+    Info: Found entity 17: d_trig
+    Info: Found entity 18: LED
+    Info: Found entity 19: segm_out
+    Info: Found entity 20: counter_6
+    Info: Found entity 21: bidec
+    Info: Found entity 22: bidec_to_7
 Info: Found 1 design units, including 1 entities, in source file lpm_dff0.v
     Info: Found entity 1: lpm_dff0
-Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(135): created implicit net for "w_milliseconds"
-Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(432): created implicit net for "led_clk"
+Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(430): created implicit net for "w_milliseconds"
+Warning (10236): Verilog HDL Implicit Net warning at Final_gen_2.v(727): created implicit net for "led_clk"
 Info: Elaborating entity "Final_gen_2" for the top level hierarchy
+Info: Elaborating entity "lcd_top" for hierarchy "lcd_top:l_t"
+Info: Elaborating entity "lcd" for hierarchy "lcd_top:l_t|lcd:mylcd"
+Info: Elaborating entity "init" for hierarchy "lcd_top:l_t|lcd:mylcd|init:initializator"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(368): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(373): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "write" for hierarchy "lcd_top:l_t|lcd:mylcd|write:wrt"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(315): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(325): truncated value with size 32 to match size of target (7)
+Info: Elaborating entity "bidec" for hierarchy "lcd_top:l_t|bidec:bdc1"
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(831): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(836): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(841): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(847): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(853): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(859): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(865): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(871): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(877): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "bidec_to_lcd" for hierarchy "lcd_top:l_t|bidec_to_lcd:btl1"
+Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(196): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(196): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "data[0]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[1]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[2]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[3]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[4]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[5]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[6]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[7]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[8]" at Final_gen_2.v(196)
+Info (10041): Inferred latch for "data[9]" at Final_gen_2.v(196)
 Info: Elaborating entity "d_trig" for hierarchy "d_trig:start_trigger"
 Info: Elaborating entity "timer" for hierarchy "timer:lap_timer"
-Warning (10034): Output port "five_seconds" at Final_gen_2.v(115) has no driver
+Warning (10034): Output port "five_seconds" at Final_gen_2.v(410) has no driver
 Info: Elaborating entity "time_counter" for hierarchy "timer:lap_timer|time_counter:clk_counter"
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(186): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(481): truncated value with size 32 to match size of target (26)
 Info: Elaborating entity "time_counter" for hierarchy "timer:lap_timer|time_counter:milliseconds_counter"
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(186): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(481): truncated value with size 32 to match size of target (7)
 Info: Elaborating entity "time_counter" for hierarchy "timer:lap_timer|time_counter:seconds_counter"
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(186): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(481): truncated value with size 32 to match size of target (7)
 Info: Elaborating entity "five_sec_trig" for hierarchy "five_sec_trig:fst"
 Info: Elaborating entity "LED" for hierarchy "LED:time_led"
 Info: Elaborating entity "delitel" for hierarchy "LED:time_led|delitel:delitel_led"
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(360): truncated value with size 32 to match size of target (25)
-Info: Elaborating entity "bidec" for hierarchy "LED:time_led|bidec:my_bidec_1"
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(536): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(541): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(546): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(552): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(558): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(564): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(570): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(576): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(582): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(655): truncated value with size 32 to match size of target (25)
 Info: Elaborating entity "bidec_to_7" for hierarchy "LED:time_led|bidec_to_7:bd7_1_1"
-Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(596): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(596): inferring latch(es) for variable "segments", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "segments[0]" at Final_gen_2.v(596)
-Info (10041): Inferred latch for "segments[1]" at Final_gen_2.v(596)
-Info (10041): Inferred latch for "segments[2]" at Final_gen_2.v(596)
-Info (10041): Inferred latch for "segments[3]" at Final_gen_2.v(596)
-Info (10041): Inferred latch for "segments[4]" at Final_gen_2.v(596)
-Info (10041): Inferred latch for "segments[5]" at Final_gen_2.v(596)
-Info (10041): Inferred latch for "segments[6]" at Final_gen_2.v(596)
+Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(891): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(891): inferring latch(es) for variable "segments", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "segments[0]" at Final_gen_2.v(891)
+Info (10041): Inferred latch for "segments[1]" at Final_gen_2.v(891)
+Info (10041): Inferred latch for "segments[2]" at Final_gen_2.v(891)
+Info (10041): Inferred latch for "segments[3]" at Final_gen_2.v(891)
+Info (10041): Inferred latch for "segments[4]" at Final_gen_2.v(891)
+Info (10041): Inferred latch for "segments[5]" at Final_gen_2.v(891)
+Info (10041): Inferred latch for "segments[6]" at Final_gen_2.v(891)
 Info: Elaborating entity "counter_6" for hierarchy "LED:time_led|counter_6:counter"
-Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(512): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at Final_gen_2.v(807): truncated value with size 32 to match size of target (3)
 Info: Elaborating entity "segm_out" for hierarchy "LED:time_led|segm_out:segm_out_1"
-Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(478): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(488): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(478): inferring latch(es) for variable "segm_out", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(478): inferring latch(es) for variable "cathode", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "cathode[0]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "cathode[1]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "cathode[2]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "cathode[3]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "cathode[4]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "cathode[5]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "segm_out[0]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "segm_out[1]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "segm_out[2]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "segm_out[3]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "segm_out[4]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "segm_out[5]" at Final_gen_2.v(478)
-Info (10041): Inferred latch for "segm_out[6]" at Final_gen_2.v(478)
+Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(773): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at Final_gen_2.v(783): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(773): inferring latch(es) for variable "segm_out", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Final_gen_2.v(773): inferring latch(es) for variable "cathode", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "cathode[0]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "cathode[1]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "cathode[2]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "cathode[3]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "cathode[4]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "cathode[5]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "segm_out[0]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "segm_out[1]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "segm_out[2]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "segm_out[3]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "segm_out[4]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "segm_out[5]" at Final_gen_2.v(773)
+Info (10041): Inferred latch for "segm_out[6]" at Final_gen_2.v(773)
 Info: Elaborating entity "time_trig" for hierarchy "time_trig:ttr"
 Info: Elaborating entity "time_mux" for hierarchy "time_mux:tmx"
-Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: 13 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal LED:time_led|counter_6:counter|count[2]
 Warning: Latch LED:time_led|segm_out:segm_out_1|segm_out[1] has unsafe behavior
@@ -671,11 +955,11 @@ Info: Implemented 400 device resources after synthesis - the final resource coun
     Info: Implemented 2 input pins
     Info: Implemented 13 output pins
     Info: Implemented 385 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 142 warnings
-    Info: Peak virtual memory: 195 megabytes
-    Info: Processing ended: Mon May 27 17:24:40 2019
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 149 warnings
+    Info: Peak virtual memory: 196 megabytes
+    Info: Processing ended: Tue Jun 11 17:38:04 2019
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+

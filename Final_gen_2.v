@@ -38,6 +38,14 @@ wire w_reset;
 // input clk, in, rs, output out
 
 
+lcd_top l_t(.clk(master_clk),
+			.min_1(minutes),
+			.sec_1(seconds),
+			.milsec_1(milliseconds),
+			.min_2(minutes_2),
+			.sec_2(seconds_2),
+			.milsec_2(milliseconds_2));
+
 d_trig start_trigger (.clk(laser_detector),
 					  .in(vcc),
 					  .out(enable));
@@ -97,6 +105,300 @@ time_mux tmx (.clk(master_clk),
 
 
 endmodule 
+
+//=============LCD=================
+module lcd_top(
+ input clk,
+ input [6:0] min_1,
+ input [6:0] sec_1,
+ input [6:0] milsec_1,
+ input [6:0] min_2,
+ input [6:0] sec_2,
+ input [6:0] milsec_2,
+ output [9:0] data,
+ output enable 
+ );
+ 
+ wire [3:0] min_1_w;
+ wire [3:0] sec_1_w;
+ wire [3:0] milsec_1_w;
+ wire [3:0] min_2_w;
+ wire [3:0] sec_2_w;
+ wire [3:0] milsec_2_w;
+ 
+ wire [3:0] min_1_d;
+ wire [3:0] sec_1_d;
+ wire [3:0] milsec_1_d;
+ wire [3:0] min_2_d;
+ wire [3:0] sec_2_d;
+ wire [3:0] milsec_2_d;
+ 
+ 
+ wire [3:0] bidec_1 [1:0];
+ wire [3:0] bidec_2 [1:0];
+ wire [3:0] bidec_3 [1:0];
+
+ wire [3:0] bidec_1_1 = bidec_1[1];
+ wire [3:0] bidec_1_2 = bidec_1[0];
+ wire [3:0] bidec_2_1 = bidec_2[1];
+ wire [3:0] bidec_2_2 = bidec_2[0];
+ wire [3:0] bidec_3_1 = bidec_3[1];
+ wire [3:0] bidec_3_2 = bidec_3[0];
+ 
+ lcd mylcd(.master_clk(clk),
+		   .data(data),
+		   .enable(enable));
+ bidec bdc1(.bidec_clk(clk),
+			.vhod(min_1),
+			.vyhod_1(bidec_1)			
+			);
+			
+ bidec bdc2(.bidec_clk(clk),
+			.vhod(sec_1),
+			.vyhod_1(bidec_2)			
+			);	
+			
+ bidec bdc3(.bidec_clk(clk),
+			.vhod(milsec_1),
+			.vyhod_1(bidec_3)			
+			);					
+			
+			
+bidec_to_lcd btl1(.bi_in(bidec_1_1)				
+				);
+					
+bidec_to_lcd btl2(.bi_in(bidec_1_2)				
+				);	
+				
+				
+				
+bidec_to_lcd btl3(.bi_in(bidec_2_1)				
+				);
+					
+bidec_to_lcd btl4(.bi_in(bidec_2_2)				
+				);	
+			
+			
+			
+bidec_to_lcd btl5(.bi_in(bidec_3_1)				
+				);
+					
+bidec_to_lcd btl6(.bi_in(bidec_3_2)				
+				);												
+						
+ 
+ endmodule
+
+
+
+
+module bidec_to_lcd
+(   // bi-dec code to 7 segments
+ input wire [3:0] bi_in,
+ output reg [9:0] data);
+
+always @*
+    begin 
+      
+ case (bi_in)
+
+   4'd0:  data = 10'b1000110000;
+   4'd1:  data = 10'b1000110001;
+   4'd2:  data = 10'b1000110010;
+   4'd3:  data = 10'b1000110011;
+   4'd4:  data = 10'b1000110100;
+   4'd5:  data = 10'b1000110101;
+   4'd6:  data = 10'b1000110110;
+   4'd7:  data = 10'b1000110111;
+   4'd8:  data = 10'b1000111000;
+   4'd9:  data = 10'b1000111001;
+
+endcase
+end
+endmodule
+
+
+module lcd(
+input master_clk,
+
+output [9:0] data,
+output enable,
+output enable_control,
+output ready_out);
+
+
+reg [9:0] in_data[34];
+
+wire enable_wire;
+wire ready;
+wire [9:0] data_wire;
+wire [9:0] data_init;
+wire [9:0] data_write;
+wire write_out_enable;
+wire init_out_enable;
+
+assign enable_wire = write_out_enable | init_out_enable;
+assign enable = enable_wire;
+assign enable_control = enable_wire;
+assign data = data_wire;
+assign data_wire = data_init | data_write;
+assign ready_out = ~ready;
+
+
+
+initial begin
+	in_data[0] = 10'b0010000000;// set cursor on 0x0
+	
+	in_data[1] = 10'b1000010000; 
+	in_data[2] = 10'b1000010000; 
+	in_data[3] = 10'b1000010000; 
+	in_data[4] = 10'b1000010000; 
+	
+	in_data[5] = 10'b1000010000; 
+	in_data[6] = 10'b1000010000;
+	in_data[7] = 10'b1000010000;
+	in_data[8] = 10'b1000010000;
+	
+	in_data[9] = 10'b1000010000;
+	in_data[10] = 10'b1000010000;
+	in_data[11] = 10'b1000010000;
+	in_data[12] = 10'b1000010000;
+	
+	in_data[13] = 10'b1000010000;
+	in_data[14] = 10'b1000010000;
+	in_data[15] = 10'b1000010000;
+	in_data[16] = 10'b1000010000;
+	
+	in_data[17] = 10'b0011000000; // set cursor on 0x1
+	
+	in_data[18] = 10'b1000010000;
+	in_data[19] = 10'b1000010000;
+	in_data[20] = 10'b1000010000;
+	in_data[21] = 10'b1000010000;
+	
+	in_data[22] = 10'b1000010000;
+	in_data[23] = 10'b1000010000;
+	in_data[24] = 10'b1000010000;
+	in_data[25] = 10'b1000010000;
+	
+	in_data[26] = 10'b1000010000;
+	in_data[27] = 10'b1000010000;
+	in_data[28] = 10'b1000010000;
+	in_data[29] = 10'b1000010000;
+	
+	in_data[30] = 10'b1000010000;
+	in_data[31] = 10'b1000010000;
+	in_data[32] = 10'b1000010000;
+	in_data[33] = 10'b1000010000;
+	
+end
+
+init initializator (.clk(master_clk), .data(data_init), .enable(init_out_enable), .ready(ready));
+write wrt(.clk(master_clk), .in_data(in_data), .ready(ready), .data(data_write), .enable(write_out_enable));
+
+
+endmodule
+
+
+module write
+#(parameter N = 14)
+(
+input ready,
+input clk,
+input [9:0] in_data[34],
+output enable,
+output reg [9:0] data
+);
+
+reg [9:0] data_in [34];
+reg [6:0] inner_counter;
+reg [N:0] inner_delitel;
+
+assign data_in = in_data;
+assign enable = inner_delitel[N];
+
+always@ (posedge clk)
+	if (ready)
+		inner_delitel = inner_delitel + 1;
+	else
+		inner_delitel = 0;
+		
+always@ (posedge inner_delitel[N])
+	if (ready)
+	begin
+		if (inner_counter == 34)
+			inner_counter <= 0;
+		else
+			inner_counter = inner_counter + 1;
+	end
+	else 
+		inner_counter = 0;
+	
+always@ (posedge inner_delitel[N])
+	begin
+	
+		if (inner_counter >=0 | inner_counter <= 33)
+			data = data_in[inner_counter];
+	
+		else
+	
+			data = 0;
+			
+			
+	end	
+
+
+endmodule
+
+
+module init
+	#(parameter N = 14)
+	(
+	input clk,
+	output reg [9:0] data,
+	output [3:0]counter_2_out,
+	output enable,
+	output reg ready
+		   );
+		   
+reg [N:0] counter_1;
+reg [3:0]  counter_2;
+reg en;
+
+assign counter_2_out = ~counter_2;
+assign enable = counter_1[N] && ~ready;
+
+initial begin en = 1;
+ready = 0; end
+
+always@ (posedge clk && en == 1)
+	counter_1 = counter_1 + 1;
+	
+
+always@ (posedge counter_1[N])
+	begin
+		counter_2 = counter_2 + 1;
+		if (counter_2 == 6)
+			begin 
+				en <= 0;
+				counter_2 <= 0;
+				ready <= 1; 
+				
+			end
+	end
+
+always@ (posedge counter_1[N])	
+	begin
+		case (counter_2)
+			1: data = 10'b0000111100;
+			2: data = 10'b0000001100;
+			3: data = 10'b0000000001;
+			4: data = 10'b0000000110;			
+			5: data = 10'b0000000000;
+		endcase
+	end
+endmodule 
+
 
 //====================TIMER=======================
 

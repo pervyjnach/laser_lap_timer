@@ -31,7 +31,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -56,7 +56,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 
 # end
 # entity
-d_trig
+lcd_top
 # storage
 db|Final_gen_2.(1).cnf
 db|Final_gen_2.(1).cnf
@@ -67,7 +67,245 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+lcd_top:l_t
+}
+# macro_sequence
+
+# end
+# entity
+lcd
+# storage
+db|Final_gen_2.(2).cnf
+db|Final_gen_2.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+6de9a9dd31d075f172652cb12d6751f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+lcd_top:l_t|lcd:mylcd
+}
+# macro_sequence
+
+# end
+# entity
+init
+# storage
+db|Final_gen_2.(3).cnf
+db|Final_gen_2.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+6de9a9dd31d075f172652cb12d6751f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+N
+14
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+lcd_top:l_t|lcd:mylcd|init:initializator
+}
+# macro_sequence
+
+# end
+# entity
+write
+# storage
+db|Final_gen_2.(4).cnf
+db|Final_gen_2.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+6de9a9dd31d075f172652cb12d6751f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+N
+14
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+lcd_top:l_t|lcd:mylcd|write:wrt
+}
+# macro_sequence
+
+# end
+# entity
+bidec
+# storage
+db|Final_gen_2.(5).cnf
+db|Final_gen_2.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+6de9a9dd31d075f172652cb12d6751f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+lcd_top:l_t|bidec:bdc1
+lcd_top:l_t|bidec:bdc2
+lcd_top:l_t|bidec:bdc3
+LED:time_led|bidec:my_bidec_1
+LED:time_led|bidec:my_bidec_2
+LED:time_led|bidec:my_bidec_3
+}
+# macro_sequence
+
+# end
+# entity
+bidec_to_lcd
+# storage
+db|Final_gen_2.(6).cnf
+db|Final_gen_2.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+6de9a9dd31d075f172652cb12d6751f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+lcd_top:l_t|bidec_to_lcd:btl1
+lcd_top:l_t|bidec_to_lcd:btl2
+lcd_top:l_t|bidec_to_lcd:btl3
+lcd_top:l_t|bidec_to_lcd:btl4
+lcd_top:l_t|bidec_to_lcd:btl5
+lcd_top:l_t|bidec_to_lcd:btl6
+}
+# macro_sequence
+
+# end
+# entity
+d_trig
+# storage
+db|Final_gen_2.(7).cnf
+db|Final_gen_2.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -94,8 +332,8 @@ d_trig:start_trigger
 # entity
 timer
 # storage
-db|Final_gen_2.(2).cnf
-db|Final_gen_2.(2).cnf
+db|Final_gen_2.(8).cnf
+db|Final_gen_2.(8).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -103,7 +341,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -144,8 +382,8 @@ timer:lap_timer
 # entity
 time_counter
 # storage
-db|Final_gen_2.(3).cnf
-db|Final_gen_2.(3).cnf
+db|Final_gen_2.(9).cnf
+db|Final_gen_2.(9).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -153,7 +391,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -190,8 +428,8 @@ timer:lap_timer|time_counter:clk_counter
 # entity
 time_counter
 # storage
-db|Final_gen_2.(4).cnf
-db|Final_gen_2.(4).cnf
+db|Final_gen_2.(10).cnf
+db|Final_gen_2.(10).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -199,7 +437,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -236,8 +474,8 @@ timer:lap_timer|time_counter:milliseconds_counter
 # entity
 time_counter
 # storage
-db|Final_gen_2.(5).cnf
-db|Final_gen_2.(5).cnf
+db|Final_gen_2.(11).cnf
+db|Final_gen_2.(11).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -245,7 +483,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -283,8 +521,8 @@ timer:lap_timer|time_counter:minutes_counter
 # entity
 five_sec_trig
 # storage
-db|Final_gen_2.(6).cnf
-db|Final_gen_2.(6).cnf
+db|Final_gen_2.(12).cnf
+db|Final_gen_2.(12).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -292,7 +530,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -319,8 +557,8 @@ five_sec_trig:fst
 # entity
 LED
 # storage
-db|Final_gen_2.(7).cnf
-db|Final_gen_2.(7).cnf
+db|Final_gen_2.(13).cnf
+db|Final_gen_2.(13).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -328,7 +566,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -361,8 +599,8 @@ LED:time_led
 # entity
 delitel
 # storage
-db|Final_gen_2.(8).cnf
-db|Final_gen_2.(8).cnf
+db|Final_gen_2.(14).cnf
+db|Final_gen_2.(14).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -370,7 +608,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -401,48 +639,10 @@ LED:time_led|delitel:delitel_led
 
 # end
 # entity
-bidec
-# storage
-db|Final_gen_2.(9).cnf
-db|Final_gen_2.(9).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-LED:time_led|bidec:my_bidec_1
-LED:time_led|bidec:my_bidec_2
-LED:time_led|bidec:my_bidec_3
-}
-# macro_sequence
-
-# end
-# entity
 bidec_to_7
 # storage
-db|Final_gen_2.(10).cnf
-db|Final_gen_2.(10).cnf
+db|Final_gen_2.(15).cnf
+db|Final_gen_2.(15).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -450,7 +650,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -482,8 +682,8 @@ LED:time_led|bidec_to_7:bd7_3_2
 # entity
 counter_6
 # storage
-db|Final_gen_2.(11).cnf
-db|Final_gen_2.(11).cnf
+db|Final_gen_2.(16).cnf
+db|Final_gen_2.(16).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -491,7 +691,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -518,8 +718,8 @@ LED:time_led|counter_6:counter
 # entity
 segm_out
 # storage
-db|Final_gen_2.(12).cnf
-db|Final_gen_2.(12).cnf
+db|Final_gen_2.(17).cnf
+db|Final_gen_2.(17).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -527,7 +727,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -554,8 +754,8 @@ LED:time_led|segm_out:segm_out_1
 # entity
 time_trig
 # storage
-db|Final_gen_2.(13).cnf
-db|Final_gen_2.(13).cnf
+db|Final_gen_2.(18).cnf
+db|Final_gen_2.(18).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -563,7 +763,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -590,8 +790,8 @@ time_trig:ttr
 # entity
 time_mux
 # storage
-db|Final_gen_2.(14).cnf
-db|Final_gen_2.(14).cnf
+db|Final_gen_2.(19).cnf
+db|Final_gen_2.(19).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -599,7 +799,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1ec6c92363a9e9749010a12cc358757
+6de9a9dd31d075f172652cb12d6751f
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
