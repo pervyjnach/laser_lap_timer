@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C5T144) Path("C:/Projects/laser_lap_timer/") File("Final_gen_2.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C5T144) Path("E:/slava/laser_lap_timer/") File("Final_gen_2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

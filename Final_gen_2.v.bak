@@ -8,8 +8,8 @@ input laser_detector,
 //input key_1, // pin 135
 //input key_2, // pin 141
 
-output reg [6:0] segments,
-output reg [5:0] cathode
+output reg [9:0] output_data,
+output reg output_enable
 ); 
 
 reg vcc;
@@ -44,7 +44,9 @@ lcd_top l_t(.clk(master_clk),
 			.milsec_1(milliseconds),
 			.min_2(minutes_2),
 			.sec_2(seconds_2),
-			.milsec_2(milliseconds_2));
+			.milsec_2(milliseconds_2),
+			.data(output_data),
+			.enable(output_enable));
 
 d_trig start_trigger (.clk(laser_detector),
 					  .in(vcc),
@@ -69,13 +71,13 @@ five_sec_trig fst (.clk(master_clk),
 				   .minutes(minutes));
 				
 				
-LED time_led   (.digit_1(m),
+/*LED time_led   (.digit_1(m),
 				.digit_2(s),
 				.digit_3(mll),
 				.led_clk_in(master_clk),
 				.led_segments(segments),
 				.led_cathode(cathode));
-				
+	*/			
 time_trig ttr (.clk(w_reset),
 			   .minutes(minutes),
 			   .seconds(seconds),
@@ -83,7 +85,7 @@ time_trig ttr (.clk(w_reset),
 			   .out_minutes(minutes_2),
 			   .out_seconds(seconds_2),
 			   .out_milliseconds(milliseconds_2));
-			  
+/*			  
 time_mux tmx (.clk(master_clk),
 			  .min_1(minutes),
 			  .sec_1(seconds),
@@ -94,7 +96,7 @@ time_mux tmx (.clk(master_clk),
 			  .min_out(m),
 			  .sec_out(s),
 			  .mill_out(mll));							
-
+*/
 /*LED result_led (.digit_1()
 				.digit_2(),
 				.digit_3(),
@@ -126,10 +128,20 @@ module lcd_top(
  wire [3:0] sec_2_w;
  wire [3:0] milsec_2_w;
  
+ wire [3:0] min_1_d;
+ wire [3:0] sec_1_d;
+ wire [3:0] milsec_1_d;
+ wire [3:0] min_2_d;
+ wire [3:0] sec_2_d;
+ wire [3:0] milsec_2_d;
+ 
  
  wire [3:0] bidec_1 [1:0];
  wire [3:0] bidec_2 [1:0];
  wire [3:0] bidec_3 [1:0];
+ wire [3:0] bidec_4 [1:0];
+ wire [3:0] bidec_5 [1:0];
+ wire [3:0] bidec_6 [1:0];
 
  wire [3:0] bidec_1_1 = bidec_1[1];
  wire [3:0] bidec_1_2 = bidec_1[0];
@@ -138,9 +150,80 @@ module lcd_top(
  wire [3:0] bidec_3_1 = bidec_3[1];
  wire [3:0] bidec_3_2 = bidec_3[0];
  
+ wire [3:0] bidec_4_1 = bidec_4[1];
+ wire [3:0] bidec_4_2 = bidec_4[0];
+ wire [3:0] bidec_5_1 = bidec_5[1];
+ wire [3:0] bidec_5_2 = bidec_5[0];
+ wire [3:0] bidec_6_1 = bidec_6[1];
+ wire [3:0] bidec_6_2 = bidec_6[0];
+ 
+ wire [9:0] data_wire [34];
+ 
+ 
+ wire [9:0] m_11;
+ wire [9:0] m_12;
+ wire [9:0] s_11;
+ wire [9:0] s_12;
+ wire [9:0] ms_11;
+ wire [9:0] ms_12;
+ 
+ wire [9:0] m_21 ;
+ wire [9:0] m_22 ;
+ wire [9:0] s_21;
+ wire [9:0] s_22;
+ wire [9:0] ms_21;
+ wire [9:0] ms_22;
+ 
+ wire [9:0] set_1 = 10'b0010000000;
+ wire [9:0] set_2 = 10'b0011000000;
+ wire [9:0] set_3 = 10'b0011000100;
+ wire [9:0] T = 10'b1001010100;
+ wire [9:0] i= 10'b1001101001;
+ wire [9:0] m = 10'b1001101101;
+ wire [9:0] e = 10'b1001100101;
+ wire [9:0] double_point = 10'b1000111010;
+ wire [9:0] L = 10'b1001001100;
+ wire [9:0] a = 10'b1001100001;
+ wire [9:0] p = 10'b1001110000;
+ 
+ assign data_wire[0] = set_1;
+ assign data_wire[1] = T;
+ assign data_wire[2] = i;
+ assign data_wire[3] = m;
+ assign data_wire[4] = e;
+ assign data_wire[5] = double_point;
+ 
+ assign data_wire[6] = m_11;
+ assign data_wire[7] = m_12;
+ assign data_wire[8] = double_point;
+ assign data_wire[9] = s_11;
+ assign data_wire[10] = s_12;
+ assign data_wire[11] = double_point;
+ assign data_wire[12] = ms_11;
+ assign data_wire[13] = ms_12;
+ 
+ assign data_wire[14] = set_2;
+ assign data_wire[15] = L;
+ assign data_wire[16] = a;
+ assign data_wire[17] = p;
+ assign data_wire[18] = set_3;
+ assign data_wire[19] = double_point;
+ assign data_wire[20] = m_21;
+ assign data_wire[21] = m_22;
+ assign data_wire[22] = double_point;
+ assign data_wire[23] = s_21;
+ assign data_wire[24] = s_22;
+ assign data_wire[25] = double_point;
+ assign data_wire[26] = ms_21;
+ assign data_wire[27] = ms_22;
+ 
+ 
+ 
  lcd mylcd(.master_clk(clk),
 		   .data(data),
+		   .input_data(data_wire),
 		   .enable(enable));
+		   
  bidec bdc1(.bidec_clk(clk),
 			.vhod(min_1),
 			.vyhod_1(bidec_1)			
@@ -156,28 +239,80 @@ module lcd_top(
 			.vyhod_1(bidec_3)			
 			);					
 			
+ bidec bdc4(.bidec_clk(clk),
+			.vhod(min_2),
+			.vyhod_1(bidec_4)			
+			);
+
+ bidec bdc5(.bidec_clk(clk),
+			.vhod(sec_2),
+			.vyhod_1(bidec_5)			
+			);	
+
+ bidec bdc6(.bidec_clk(clk),
+			.vhod(milsec_2),
+			.vyhod_1(bidec_6)			
+			);										
 			
-bidec_to_lcd btl1(.bi_in(bidec_1_1)				
+						
+			
+bidec_to_lcd btl1(.bi_in(bidec_1_1),
+				.data(m_11)									  
 				);
 					
-bidec_to_lcd btl2(.bi_in(bidec_1_2)				
+bidec_to_lcd btl2(.bi_in(bidec_1_2),	
+				.data(m_12)				  				
 				);	
 				
 				
 				
-bidec_to_lcd btl3(.bi_in(bidec_2_1)				
+bidec_to_lcd btl3(.bi_in(bidec_2_1),
+				  .data(s_11)		
 				);
 					
-bidec_to_lcd btl4(.bi_in(bidec_2_2)				
+bidec_to_lcd btl4(.bi_in(bidec_2_2),
+				  .data(s_12)					
 				);	
 			
 			
 			
-bidec_to_lcd btl5(.bi_in(bidec_3_1)				
+bidec_to_lcd btl5(.bi_in(bidec_3_1),
+				  .data(ms_11)					
 				);
 					
-bidec_to_lcd btl6(.bi_in(bidec_3_2)				
+bidec_to_lcd btl6(.bi_in(bidec_3_2),
+				  .data(ms_12)					
 				);												
+//==================================================================
+
+bidec_to_lcd bt21(.bi_in(bidec_4_1),
+				.data(m_21)									  
+				);
+					
+bidec_to_lcd bt22(.bi_in(bidec_4_2),	
+				.data(m_22)				  				
+				);	
+				
+				
+				
+bidec_to_lcd bt23(.bi_in(bidec_5_1),
+				  .data(s_21)		
+				);
+					
+bidec_to_lcd bt24(.bi_in(bidec_5_2),
+				  .data(s_22)					
+				);	
+			
+			
+			
+bidec_to_lcd bt25(.bi_in(bidec_6_1),
+				  .data(ms_21)					
+				);
+					
+bidec_to_lcd bt26(.bi_in(bidec_6_2),
+				  .data(ms_22)					
+				);	
+
 						
  
  endmodule
@@ -213,6 +348,7 @@ endmodule
 
 module lcd(
 input master_clk,
+input [9:0] input_data [34],
 
 output [9:0] data,
 output enable,
@@ -236,14 +372,14 @@ assign enable_control = enable_wire;
 assign data = data_wire;
 assign data_wire = data_init | data_write;
 assign ready_out = ~ready;
-
+assign in_data = input_data;
 
 
 initial begin
 	in_data[0] = 10'b0010000000;// set cursor on 0x0
 	
-	in_data[1] = 10'b1000010000; 
-	in_data[2] = 10'b1000010000; 
+	in_data[1] = 10'b1001100001; 
+	in_data[2] = 10'b1001100011; 
 	in_data[3] = 10'b1000010000; 
 	in_data[4] = 10'b1000010000; 
 	
@@ -284,7 +420,8 @@ initial begin
 	in_data[32] = 10'b1000010000;
 	in_data[33] = 10'b1000010000;
 	
-end
+	
+end 
 
 init initializator (.clk(master_clk), .data(data_init), .enable(init_out_enable), .ready(ready));
 write wrt(.clk(master_clk), .in_data(in_data), .ready(ready), .data(data_write), .enable(write_out_enable));
