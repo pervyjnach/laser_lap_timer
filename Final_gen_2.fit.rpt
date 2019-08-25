@@ -1,5 +1,5 @@
 Fitter report for Final_gen_2
-Sat May 25 12:48:33 2019
+Sun Aug 25 19:45:53 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +------------------------------------+----------------------------------------------+
-; Fitter Status                      ; Successful - Sat May 25 12:48:33 2019        ;
+; Fitter Status                      ; Successful - Sun Aug 25 19:45:53 2019        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Final_gen_2                                  ;
 ; Top-level Entity Name              ; Final_gen_2                                  ;
@@ -141,7 +141,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 2      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -191,7 +191,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Projects/laser_lap_timer/Final_gen_2.pin.
+The pin-out file can be found in D:/Slawa/lap_timer/laser_lap_timer/Final_gen_2.pin.
 
 
 +-----------------------------------------------------------------------+
@@ -497,7 +497,7 @@ Note: User assignments will override these defaults. The user specified values a
 ;       |bidec_to_7:bd7_3_2|                ; 15 (15)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; |Final_gen_2|LED:time_led|bidec_to_7:bd7_3_2                   ;              ;
 ;       |counter_6:counter|                 ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |Final_gen_2|LED:time_led|counter_6:counter                    ;              ;
 ;       |delitel:delitel_led|               ; 6 (6)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (6)            ; |Final_gen_2|LED:time_led|delitel:delitel_led                  ;              ;
-;       |segm_out:segm_out_1|               ; 50 (50)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 50 (50)      ; 0 (0)             ; 0 (0)            ; |Final_gen_2|LED:time_led|segm_out:segm_out_1                  ;              ;
+;       |segm_out:segm_out_1|               ; 50 (50)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 50 (50)      ; 0 (0)             ; 0 (0)            ; |Final_gen_2|LED:time_led|segm_out:segm_out_1                  ; work         ;
 ;    |d_trig:start_trigger|                 ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Final_gen_2|d_trig:start_trigger                              ;              ;
 ;    |five_sec_trig:fst|                    ; 4 (4)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 1 (1)            ; |Final_gen_2|five_sec_trig:fst                                 ;              ;
 ;    |timer:lap_timer|                      ; 84 (1)      ; 50 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 34 (1)       ; 0 (0)             ; 50 (0)           ; |Final_gen_2|timer:lap_timer                                   ;              ;
@@ -841,7 +841,7 @@ This will disable optimization of problematic paths and expose them for further 
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 25 12:48:30 2019
+    Info: Processing started: Sun Aug 25 19:45:51 2019
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off Final_gen_2 -c Final_gen_2
 Info: Selected device EP2C5T144C8 for design "Final_gen_2"
 Info: Low junction temperature is 0 degrees C
@@ -907,7 +907,7 @@ Info: Estimated most critical path is register to register delay of 2.560 ns
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 1% of the available device resources
     Info: Peak interconnect usage is 2% of the available device resources in the region that extends from location X14_Y0 to location X28_Y14
-Info: Fitter routing operations ending: elapsed time is 00:00:01
+Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
     Info: Optimizations that may affect the design's timing were skipped
@@ -930,9 +930,9 @@ Info: Delay annotation completed successfully
 Warning: Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 219 megabytes
-    Info: Processing ended: Sat May 25 12:48:33 2019
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 252 megabytes
+    Info: Processing ended: Sun Aug 25 19:45:53 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

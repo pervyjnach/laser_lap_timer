@@ -31,7 +31,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -67,7 +67,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -103,7 +103,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -153,7 +153,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -199,7 +199,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -245,7 +245,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -292,7 +292,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -328,7 +328,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -370,7 +370,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -412,7 +412,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -450,7 +450,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -491,7 +491,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -527,7 +527,7 @@ ON
 # case_sensitive
 # source_file
 final_gen_2.v
-1b4e3fba70685d771de39bf92d5d77
+c22d3946099b0e982b31c91c488057
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -547,6 +547,126 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 LED:time_led|segm_out:segm_out_1
+}
+# macro_sequence
+
+# end
+# entity
+lcd1602
+# storage
+db|Final_gen_2.(13).cnf
+db|Final_gen_2.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+c22d3946099b0e982b31c91c488057
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+lcd1602:lcd
+}
+# macro_sequence
+
+# end
+# entity
+init
+# storage
+db|Final_gen_2.(14).cnf
+db|Final_gen_2.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+c22d3946099b0e982b31c91c488057
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+N
+14
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+lcd1602:lcd|init:initializator
+}
+# macro_sequence
+
+# end
+# entity
+write
+# storage
+db|Final_gen_2.(15).cnf
+db|Final_gen_2.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+final_gen_2.v
+c22d3946099b0e982b31c91c488057
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+N
+14
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+lcd1602:lcd|write:wrt
 }
 # macro_sequence
 
